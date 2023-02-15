@@ -3,8 +3,8 @@ class CreateShiftAssignments < ActiveRecord::Migration[7.0]
     create_table :shift_assignments do |t|
       t.references :employee, null: false, foreign_key: true
       t.references :shift, null: false, foreign_key: true
-      t.date :clockin_time
-      t.date :clockout_time
+      t.datetime :clockin_time
+      t.datetime :clockout_time
 
       t.timestamps
     end

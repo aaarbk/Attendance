@@ -10,8 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_15_210320) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_15_212653) do
   create_table "employees", force: :cascade do |t|
+    t.string "card_num"
     t.string "first_name"
     t.string "last_name"
     t.string "email"
@@ -33,8 +34,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_15_210320) do
   create_table "shift_assignments", force: :cascade do |t|
     t.integer "employee_id", null: false
     t.integer "shift_id", null: false
-    t.date "clockin_time"
-    t.date "clockout_time"
+    t.datetime "clockin_time"
+    t.datetime "clockout_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["employee_id"], name: "index_shift_assignments_on_employee_id"
@@ -42,8 +43,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_15_210320) do
   end
 
   create_table "shifts", force: :cascade do |t|
-    t.date "start_time"
-    t.date "end_time"
+    t.datetime "start_time"
+    t.datetime "end_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
