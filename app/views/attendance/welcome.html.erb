@@ -1,0 +1,14 @@
+
+
+<form id="form">
+  <input type="text" id="textfield">
+  <input type="submit" value="Submit" style="visibility:hidden">
+</form>
+
+<script>
+document.getElementById("textfield").addEventListener("keyup", function() {
+setTimeout(function() {
+document.getElementById("form").submit();
+}, 1000);
+});
+</script>
