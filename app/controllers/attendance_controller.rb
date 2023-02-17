@@ -3,6 +3,8 @@ class AttendanceController < ApplicationController
   end
 
   def proc
-    puts "Hello!!!!!!!!!!!"
+    puts "Hi, Hessa!"
+    puts "The card number is #{params}"
+
   end
 end
