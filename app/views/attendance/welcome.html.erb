@@ -1,16 +1,8 @@
 
+<%= form_tag("/process", method: "post", id: "form") do %>
+<%= label_tag(:card_num, "Card Number") %>
+<%= text_field_tag(:card_num) %>
+<%= submit_tag("submit") %>
+<% end %>
 
-<form id="form" method="post" action="/process">
-<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-  <input type="text" id="card_num">
-  <input type="submit" value="Submit" style="visibility:hidden">
-  
-</form>
-
-<script>
-document.getElementById("card_num").addEventListener("keyup", function() {
-setTimeout(function() {
-document.getElementById("form").submit();
-}, 1000);
-});
-</script>
+<%= # keyup is causing multiple submissions %>
