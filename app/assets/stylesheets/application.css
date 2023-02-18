@@ -12,4 +12,15 @@
  *
  *= require_tree .
  *= require_self
+
  */
+
+
+
+ .notice {
+    color: green;
+ }
+
+ .hide-notice {
+    display: none;
+ }
