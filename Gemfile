@@ -72,3 +72,5 @@ group :test do
 end
 
 gem "hirb", "~> 0.7.3"
+
+gem "seed_dump", "~> 3.3"
