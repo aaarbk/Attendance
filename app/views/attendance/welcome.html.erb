@@ -1,6 +1,42 @@
 
 <%= form_tag("/process", method: "post", id: "form") do %>
+
+
+  
+<div class="form-group">
 <%= label_tag(:card_num, "Card Number") %>
-<%= text_field_tag(:card_num) %>
-<%= submit_tag("submit") %>
+<div class="col-sm-4">
+<%= text_field_tag(:card_num, nil, class: "form-control") %>
+</div>
+</div>
+
+
 <% end %>
+
+<% if flash[:notice] %>
+    <div class="flash notice"><%= flash[:notice] %></div>
+<% end %>
+
+<script>
+
+window.onload = function() {
+  document.getElementById("card_num").focus();
+};
+
+const form = document.getElementById('form');
+const textField = document.getElementById('card_num');
+
+
+textField.addEventListener('input', function() {
+  setTimeout(function() {
+    form.submit();
+  }, 500);
+});
+
+      setTimeout(function() {
+          $('.notice').fadeOut('slow', function() {
+              $('.notice').addClass('hide-notice');
+          });
+      }, 3000);
+
+</script>

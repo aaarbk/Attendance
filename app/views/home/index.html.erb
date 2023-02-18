@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Website</title>
+  </head>
+  <body>
+    
+    <h1>Welcome to my website!</h1>
+
+    <% if flash[:notice] %>
+      <div class="flash notice"><%= flash[:notice] %></div>
+    <% end %>
+
+  <script>
+      setTimeout(function() {
+          $('.notice').fadeOut('slow', function() {
+              $('.notice').addClass('hide-notice');
+          });
+      }, 3000);
+  </script>
+
+  </body>
+</html>

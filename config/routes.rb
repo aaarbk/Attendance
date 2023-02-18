@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  #get 'attendance/welcome'
+  get 'info/index'
+  get 'home/index'
+  get 'welcome', to: 'attendance#welcome', as: "welcome"
   post '/process', to: 'attendance#proc'
-  root "attendance#welcome"
+  root "home#index"
 end

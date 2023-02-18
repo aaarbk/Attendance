@@ -9,32 +9,26 @@ class AttendanceController < ApplicationController
       if e.has_pending_shift?
         puts "#{e} is clocking in!"
         if e.pending_shift.update!(clockin_time:Time.now)
-          puts "*************"
-          puts "SAVED"
-          puts "*************"
+          flash[:notice] = "clocked in"
+
         else
-          puts "*************"
-          puts "NOT SAVED"
-          puts "*************"
+          flash[:notice] = "issue clocking in"
         end
 
       elsif e.is_working_shift?
         puts "#{e} is clocking out!"
         if e.working_shift.update!(clockout_time:Time.now)
-          puts "*************"
-          puts "SAVED"
-          puts "*************"
+         flash[:notice] = "clocked out"
         else
-          puts "*************"
-          puts "NOT SAVED"
-          puts "*************"
+          flash[:notice] = "issue clocking out"
         end
       else
-        puts "#{e} does not have a pending/working shift"
+        flash[:notice] = "No pending shift!"
       end
     else
-      puts "Employee doesn't exist!"
+      flash[:notice] = "Employee doesn't exist!"
     end
-
+    redirect_to "/welcome"
   end
+  
 end
