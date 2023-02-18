@@ -10,24 +10,25 @@ class AttendanceController < ApplicationController
         flash[:notice] = "#{e} is clocking in."
         if e.pending_shift.update!(clockin_time:Time.now)
           flash[:notice] = "clocked in"
+
         else
-          flash[:notice] = "something went wrong"
+          flash[:notice] = "issue clocking in"
         end
 
       elsif e.is_working_shift?
         flash[:notice] = "#{e} is clocking out!"
         if e.working_shift.update!(clockout_time:Time.now)
-          flash[:notice] = "clocked out"
+         flash[:notice] = "clocked out"
         else
-         flash[:notice] = "something went wrong"
+          flash[:notice] = "issue clocking out"
         end
       else
-        flash[:notice] = "#{e} does not have a pending/working shift"
+        flash[:notice] = "No pending shift!"
       end
     else
       flash[:notice] = "Employee doesn't exist!"
     end
     redirect_to "/welcome"
-
   end
+  
 end

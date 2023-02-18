@@ -1,0 +1,7 @@
+<% Employee.all.each do |e| %>
+    <h1><%= e.first_name %></h1>
+    <% e.shift_assignments.each do |a| %>
+        <h2><%= a.clockin_time %></h2>
+        <h2><%= a.clockout_time %></h2>
+    <% end %>
+<% end %>
