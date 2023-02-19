@@ -28,6 +28,9 @@ class Employee < ApplicationRecord
     working_shift.present?
   end
 
+  def name
+    "#{first_name} #{last_name}"
+  end
 
   #def is_working_shift?
   #  unless (self.shift_assignments.nil? or self.shift_assignments.last.nil?)

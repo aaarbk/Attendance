@@ -30,5 +30,9 @@ class AttendanceController < ApplicationController
     end
     redirect_to "/welcome"
   end
+
+  def shift_allocate
+    puts "*********: #{params}"
+  end
   
 end
