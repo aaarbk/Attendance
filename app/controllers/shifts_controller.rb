@@ -3,8 +3,9 @@ class ShiftsController < ApplicationController
     def new
         #@shift = Shift.new
         @employees = Employee.all
+        
     end
-
+=begin
     def create
         puts "The shift details are #{params['shift']}"
         s = params['shift']['start_time'].to_date
@@ -24,5 +25,5 @@ class ShiftsController < ApplicationController
    #def shift_params
    #     params.require(:shift).permit(:start_date, :end_date)
    # end
-
+=end   
 end

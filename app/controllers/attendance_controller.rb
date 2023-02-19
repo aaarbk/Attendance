@@ -32,7 +32,16 @@ class AttendanceController < ApplicationController
   end
 
   def shift_allocate
-    puts "*********: #{params}"
+    shift_start_time = params[:start_time]
+    shift_end_time = params[:end_time]
+    from = params[:from]
+    to = params[:to]
+
+    employee_ids = params[:employee_ids].map {|e| e.to_i}
+
+    shift_ids = Shift.create_shifts(from, to, shift_start_time, shift_end_time)
+    ShiftAssignment.create_shift_assignments(shift_ids, employee_ids)
+    flash[:notice] = "Created shifts!"
   end
   
 end
