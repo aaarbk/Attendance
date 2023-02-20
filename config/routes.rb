@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'shifts/new' #  localhost:3000/shifts/new <-- shift allocation form
+  get 'show_shifts', to: 'attendance#show_shifts'
   resources :shifts
   get 'assignment_details/index'
   get 'home/index'

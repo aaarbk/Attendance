@@ -44,5 +44,9 @@ class AttendanceController < ApplicationController
     ShiftAssignment.create_shift_assignments(shift_ids, employee_ids)
     flash[:notice] = "Created shifts!"
   end
+
+  def show_shifts
+    @employees = Employee.all
+  end
   
 end

@@ -1,0 +1,20 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Employee Name</th>
+      <th>Shift Assignments</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @employees.each do |employee| %>
+      <tr>
+        <td><%= employee.name %></td>
+        <td>
+          <% employee.shift_assignments.each do |assignment| %>
+            <%= assignment.shift.start_time.strftime('%A %m/%d/%Y %I:%M %p') %> - <%= assignment.shift.end_time.strftime('%I:%M %p') %><br>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
