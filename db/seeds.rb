@@ -12,7 +12,8 @@ Location.create!([
 
 Employee.create!([
   {card_num: "12345", first_name: "Mashael", last_name: "Alemadi", email: "mashael@example.com", phone: "50082008", role: 1, location_id: 1},
-  {card_num: "11221", first_name: "Hessa", last_name: "Boday", email: nil, phone: nil, role: 3, location_id: 1}
+  {card_num: "40534", first_name: "Hessa", last_name: "Boday", email: nil, phone: nil, role: 3, location_id: 1},
+  {card_num: "41337", first_name: "Fatima", last_name: "AlSafar", email: nil, phone: nil, role: 3, location_id: 1}
 ])
 
 =begin
